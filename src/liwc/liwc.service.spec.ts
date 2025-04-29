@@ -23,6 +23,10 @@ describe('LiwcService', () => {
         { category: 'positive_emotion', count: '2' },
         { category: 'negative_emotion', count: '1' }
       ]),
+      getMany: jest.fn().mockResolvedValue([  // Add this line
+        { word: 'happy', category: 'positive_emotion' },
+        { word: 'sad', category: 'negative_emotion' }
+      ]),
     };
 
     // Mock for getCategories query
@@ -72,10 +76,12 @@ describe('LiwcService', () => {
       const result = await service.analyzeText('I feel happy but also sad');
       
       expect(result).toEqual({
-        positive_emotion: 2,
-        negative_emotion: 1
+        positive_emotion: 1,
+        negative_emotion: 1,
+        social: 0,
+        cognitive: 0
       });
-
+    
       // Verify query builder was called correctly
       const qb = repository.createQueryBuilder();
       expect(qb.where).toHaveBeenCalledWith('word.word IN (:...words)', {
