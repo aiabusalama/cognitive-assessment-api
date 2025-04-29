@@ -44,7 +44,7 @@ cognitive-assessment-api/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-repo/cognitive-assessment-api.git
+   git clone https://github.com/aiabusalama/cognitive-assessment-api.git
    cd cognitive-assessment-api
    ```
 
