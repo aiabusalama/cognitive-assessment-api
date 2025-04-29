@@ -2,6 +2,12 @@
 
 A RESTful API for analyzing journal entries using LIWC (Linguistic Inquiry and Word Count) methodology, built with NestJS and TypeScript.
 
+## Demo
+
+Here's a quick demonstration of how it works:
+
+![Demo](./demo.gif)
+
 ## Key Features
 
 - **Stateless Service Design**: Database-backed architecture enables horizontal scaling
